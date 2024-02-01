@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Goal Planning</title>
+    <link rel="stylesheet" href="finance_planner.css">
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="profile-info">
+            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            <span>Your Name</span>
+        </div>
+    </div>
+        <div id="navbar"> 
+          <div class="n">  <a href="">Home</a></div>
+          <div class="n"> <a href="">Expense Categorization</a></div>
+          <div class="n"> <a href="">Portfolio Analysis</a></div>
+          <div class="n"></div>  <a href="">Financial Goal Planning</a></div>
+        </div>
+    <div class="container">
+        <h1>Financial Goal Planning</h1>
+        <form>
+            <label for="investment-type">Select Investment Type:</label>
+            <select id="investment-type" onchange="handleInvestmentTypeChange()">
+                <option value="fixed-deposit">Fixed Deposit</option>
+                <option value="recurring-deposit">Recurring Deposit</option>
+                <option value="mutual-funds">Mutual Funds</option>
+            </select>
+
+            <label for="amount">Enter Investment Amount:</label>
+            <input type="text" id="amount" placeholder="Enter amount" required>
+
+            <label for="tenure">Enter Investment Tenure (in years):</label>
+            <input type="text" id="tenure" placeholder="Enter tenure" required>
+
+            <label for="interest-rate">Enter Rate of Interest (annual) or Rate of Return:</label>
+            <input type="text" id="interest-rate" placeholder="Enter rate of interest or rate of return" required>
+
+            <label for="tenure-months">Enter Tenure (in months):</label>
+            <input type="text" id="tenure-months" placeholder="Enter tenure in months" required>
+
+            <div id="investment-way-container">
+                <label for="investment-way">Select Investment Way (for Mutual Funds):</label>
+                <select id="investment-way">
+                    <option value="sip">Systematic Investment Plan (SIP)</option>
+                    <option value="lump-sum">Lump Sum</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="planInvestment()">Plan Investment</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+<script src="finance_planner.js"></script>
+    </body>
+</html>
