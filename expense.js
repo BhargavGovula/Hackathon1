@@ -43,7 +43,7 @@ function updateExpenseList() {
 
     expenses.forEach(expense => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${expense.type} - ${expense.description}: $${expense.amount.toFixed(2)} (${expense.category})`;
+        listItem.textContent = `${expense.type} - ${expense.description}: Rs${expense.amount.toFixed(2)} (${expense.category})`;
         expenseList.appendChild(listItem);
     });
 }
