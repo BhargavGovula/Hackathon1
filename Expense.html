@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Categorization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="expense.css">
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="profile-info">
+            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            <span>Your Name</span>
+        </div>
+    </div>
+
+    <div id="navbar"> 
+        <div class="n">  <a href="">Home</a></div>
+        <div class="n"> <a href="budget.html">Budget Tracking</a></div>
+        <div class="n"> <a href="">Portfolio Analysis</a></div>
+        <div class="n"></div>  <a href="">Financial Goal Planning</a></div>
+    </div>
+
+    <div id="expense-container">
+        <h2 align="center">Expense Categorization</h2>
+
+        <form id="expense-form">
+            <label for="expense-description">Description:</label>
+            <input type="text" id="expense-description" placeholder="Enter expense description" required>
+
+            <label for="expense-amount">Amount:</label>
+            <input type="text" id="expense-amount" placeholder="Enter expense amount" required>
+            <label for="expense-type">Select Expense Type:</label>
+
+            <select id="expense-type" onchange="updateCategories()">
+                <option value="bills">Bills</option>
+                <option value="essentials">Essentials</option>
+                <option value="wants">Wants</option>
+            </select>
+
+            <label for="expense-category">Select Category:</label>
+            <select id="expense-category"></select>
+
+            <button type="button" onclick="addExpense()">Add Expense</button>
+        </form>
+
+        <div id="expenses-list">
+            <h3>Expense List</h3>
+            <ul id="expenses"></ul>
+        </div>
+    </div>
+
+<script src="expense.js"></script>
+</body>
+</html>
