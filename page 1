@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+<body>
+    <form action = "">
+        <label for = "">Email Id</label>
+        <input type = "email" required><br><br>
+        <label for = "">Password</label>
+        <input for = "Password" required>
+    </form>
+</body>
+</html>
