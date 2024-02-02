@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Manager</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <div class="header">
+        <img src="zoom_logo.png" alt="Logo" class="logo">
+        <h2 style="color: aliceblue;">Coin Compass</h2><div class="profile-info"><span id="displayun">Your Name</span>
+            <img src="profile_pic.jpg" alt="Profile Picture" class="profile-pic">
+        </div>
+    </div>
+    <div id="navbar"> 
+        <div class="n">  <a href="main.html">Home</a></div>
+        <div class="n"> <a href="budget.html">Budget Tracking</a></div>
+        <div class="n"> <a href="expenses.html">Expense Categorization</a></div>
+        <div class="n">  <a href="finance_planner.html">Financial Goal Planning</a></div>
+    </div>
+    <div class="container">
+        <h1>Investment Manager</h1>
+        <form id="investmentForm">
+            <label for="investmentType">Investment Type:</label>
+            <select id="investmentType" onchange="showInvestmentDetails()" required>
+                <option value="select">Select type of investment</option>
+                <option value="fixedDeposit">Fixed Deposit</option>
+                <option value="recurringDeposit">Recurring Deposit</option>
+                <option value="mutualFund">Mutual Fund</option>
+            </select>
+
+            <label for="investmentName">Investment Name:</label>
+            <input type="text" id="investmentName" required>
+
+            <label for="investmentAmount">Investment Amount:</label>
+            <input type="number" id="investmentAmount" required>
+
+            <div id="fixedDepositDetails" class="investmentDetails">
+                <label for="fdInterestRate">Interest Rate:</label>
+                <input type="number" id="fdInterestRate" step="0.01" required>
+
+                <label for="fdTenure">Tenure (in months):</label>
+                <input type="number" id="fdTenure" required>
+            </div>
+
+            <div id="recurringDepositDetails" class="investmentDetails">
+                <label for="rdInterestRate">Interest Rate:</label>
+                <input type="number" id="rdInterestRate" step="0.01" required>
+
+                <label for="rdTenure">Tenure (in months):</label>
+                <input type="number" id="rdTenure" required>
+            </div>
+
+            <div id="mutualFundDetails" class="investmentDetails">
+                <label for="mfNAV">NAV (Net Asset Value):</label>
+                <input type="number" id="mfNAV" step="0.01" required>
+
+                <label for="mfUnits">Number of Units:</label>
+                <input type="number" id="mfUnits" required>
+
+                <label for="mfRateOfReturn">Rate of Return (%):</label>
+                <input type="number" id="mfRateOfReturn" step="0.01" required>
+            </div>
+
+            <button type="button" onclick="addInvestment()">Add Investment</button>
+        </form>
+
+        <table id="investmentTable">
+            <thead>
+                <tr>
+                    <th class="hd">Type</th>
+                    <th class="hd">Name</th>
+                    <th class="hd">Amount</th>
+                    <th class="hd">Details</th>
+                    <th class="hd">Maturity Amount</th>
+                </tr>
+            </thead>
+            <tbody id="investmentList">
+                <!-- Investment entries will be added here dynamically -->
+            </tbody>
+        </table>
+
+        <div id="investmentTotals">
+            <h2>Total Investment</h2>
+            <p id="fdTotal">Fixed Deposit Total: Rs 0.00</p>
+            <p id="rdTotal">Recurring Deposit Total: Rs 0.00</p>
+            <p id="mfTotal">Mutual Fund Total: Rs 0.00</p>
+        </div>
+    </div>
+<script src="portfolio.js"></script>
+</body>
+</html>
